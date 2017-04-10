@@ -8,6 +8,9 @@ public class CharacterAnimatorControllerScript : MonoBehaviour {
 
     private Animator _animator;
 
+    public bool w;
+    public bool r;
+
 	// Use this for initialization
 	void Start () {
         _animator = GetComponent<Animator>();
@@ -15,16 +18,16 @@ public class CharacterAnimatorControllerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        bool w = Input.GetKeyDown("w");
-        bool r = Input.GetKeyDown("right shift");
+        w = Input.GetKey("w");
+        r = Input.GetKey("z");
 
         _animator.SetBool("Walk", w);
         _animator.SetBool("Run", r);
 	}
 
-    public void FootDown()
-    {
-        footsource.clip = footstep;
-        footsource.Play();
-    }
+    //public void FootDown()
+    //{
+    //    footsource.clip = footstep;
+    //    footsource.Play();
+    //}
 }
